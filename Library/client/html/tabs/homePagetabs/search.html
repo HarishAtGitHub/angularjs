@@ -1,0 +1,24 @@
+<div ng-controller="TableController">
+<table ng-table="tableParams" show-filter="true" class="table">
+            <tr ng-repeat="info in $data">
+                <td title="'Title'" filter="{ 'Title': 'text' }" sortable="'Title'">
+                    <b>{{info.Title}}</b>
+                </td>
+                <td title="'Language'" filter="{ 'Language': 'text' }">
+                    <b>{{info.Language}}</b>
+                </td>
+                <td title="'Category'" filter="{ 'Category': 'select' }" filter-data="categories($column)">
+                    <b>{{info.Category}}</b>
+                </td>
+                <td  title="'Where is it ?'" filter="{ 'WhereIsIt': 'select' }" filter-data="names($column)">
+                    <b><span ng-class="{ 'btn btn-success': info.WhereIsIt == 'Available' }" >{{info.WhereIsIt}}</span></b>
+                </td>
+                <td title="'Borrowed Date'" >
+                    <b>{{info.BorrowedDate}}</b>
+                </td>
+            
+            </tr>
+</table>
+
+
+</div>

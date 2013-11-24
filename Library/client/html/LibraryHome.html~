@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <script type="text/javascript" src="js/lib/angular-1.2.2.js"></script>
+      <script type="text/javascript" src="js/lib/ui-bootstrap-angular-0.7.0.js"></script>
+      <script type="text/javascript" src="js/custom/Controller.js"></script>
+      <script type="text/javascript" src="js/lib/ng-table.js"></script>
+      <link type="text/css"  href="css/lib/bootstrap.min-3.0.0.css" rel="stylesheet">
+      <link type="text/css"  href="css/custom/styles.css" rel="stylesheet">
+      <link type="text/css"  href="css/lib/ng-table.css" rel="stylesheet">
+   </head>
+
+   <body  ng-app="bootstrapTabs" background="images/libbackround.jpg">
+      <img id="log" src="images/lib4.png" height="130"/>
+      <!--<img src="images/LibraryLogo.gif" height="130" width="130"/>-->
+      <div ng-controller="TabController">
+         <tabset>
+            <tab ng-repeat="tab in homePagetabs" heading="{{tab.title}}" active="tab.active">      
+                <div ng-include="tab.page"></div>
+            </tab>
+         </tabset>
+      </div>
+   </body>
+
+</html>
